@@ -1,6 +1,6 @@
-# LLM_RL_AG
+# The New Agronomists: Language Models are Experts in Crop Management
 
-# Table of Contents:
+## Table of Contents:
 
 1. [Introduction](#introduction)
 2. [Repo Structure](#Repo-Structure)
@@ -8,16 +8,15 @@
 4. [Change Location](#Change-Location)
 5. [Update Training Policy](#Update-Training-Policy)
 6. [Model Zoo](#model-zoo)
-7. [Reward Comparison](#Reward-Comparison)
-8. [Citing the paper](#citing-the-paper)
-9. [Citing this repo](#citing-this-repo)
+7. [Citing the paper](#citing-the-paper)
 
-# Introduction
+
+## 1. Introduction
 Crop management plays a crucial role in determining crop yield, economic profitability, and environmental sustainability. Despite the availability of management guidelines, optimizing these practices remains a complex and multifaceted challenge. In response, previous studies have explored using reinforcement learning with crop simulators, typically employing simple neural-network-based reinforcement learning (RL) agents. Building on this foundation, this paper introduces a more advanced intelligent crop management system. This system uniquely combines RL, a language model (LM), and crop simulations facilitated by the Decision Support System for Agrotechnology Transfer (DSSAT). We utilize deep RL, specifically a deep Q-network, to train management policies that process numerous state variables from the simulator as observations. A novel aspect of our approach is the conversion of these state variables into more informative language, facilitating the language model's capacity to understand states and explore optimal management practices. The empirical results reveal that the LM exhibits superior learning capabilities. Through simulation experiments with maize crops in Florida (US) and Zaragoza (Spain), the LM not only achieves state-of-the-art performance under various evaluation metrics but also demonstrates a remarkable improvement of over 49\% in economic profit, coupled with reduced environmental impact when compared to baseline methods.
 
 ![framework](assets/framework.png)  
 
-# Repo Structure
+## 2. Repo Structure
 
 The repo structure is attached. The files with (G) mean that they will be generated during model training. 
 
@@ -41,7 +40,7 @@ The repo structure is attached. The files with (G) mean that they will be genera
     |-llm512_256_batch512_tau8_update16_lr5_irr6_clip_aug_train.xlsx(G)
 </pre>
 
-# Setup
+## 3. Setup
 
 First, install gym-dssat
 Reference: https://rgautron.gitlabpages.inria.fr/gym-dssat-docs/Installation/packages.html
@@ -57,7 +56,7 @@ Third, install kernal for Jupyter Notebook
 python -m ipykernel install --user --name=gym_dssat_pdi --display-name="Gym DSSAT PDI"
 ```
 
-# Change Location
+## 4. The Change of Experiments Location
 You can test different locations, such as Spain. Please follow the steps: 
 
 First, Download the config file SIAZ9501.MZX to the place jupyter notebook located
@@ -81,37 +80,25 @@ print(len(env.observation),len(env.observation['sw']))
 ram_dimensions = len(env.observation)+len(env.observation['sw'])-1
 ```
 
-# Update Training Policy
+## 5. Update Training Policy
 You can easily update the training policy by changing the k1/k2/k3/k4 in the 'dqn' func.
 
 
-# Model Zoo
+## 6. Model Zoo
 (To update)
 
-# Reward Comparison
-![reward](assets/reward.png)  
-
-# Citing the paper 
-(To add)
-
-```
-
-```
-
-# Citing this repo 
-(To add)
-If you use the repo in your own studies, and work, please cite it by using the following:
-
-```
-
-```
 
 
-# TODOs:
-   
-1. Paper writing, Plots, Experiments (CVPRW)
-   
-2. Add partial cases (AAAI)
+# 7. Citing the paper 
+ ```
+@article{wu2024new,
+  title={The new agronomists: Language models are experts in crop management},
+  author={Wu, Jing and Lai, Zhixin and Chen, Suiyao and Tao, Ran and Zhao, Pan and Hovakimyan, Naira},
+  journal={arXiv preprint arXiv:2403.19839},
+  year={2024}
+}
+ ```
 
-3. Refactor the code
+
+
 
