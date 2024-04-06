@@ -5,7 +5,7 @@
 1. [Introduction](#introduction)
 2. [Repo Structure](#Repo-Structure)
 3. [Setup](#Setup)
-4. [Change Location](#Change-Location)
+4. [The Change of Experiment Location](#Change-Location)
 5. [Update Training Policy](#Update-Training-Policy)
 6. [Model Zoo](#model-zoo)
 7. [Citing the paper](#citing-the-paper)
@@ -56,7 +56,7 @@ Third, install kernal for Jupyter Notebook
 python -m ipykernel install --user --name=gym_dssat_pdi --display-name="Gym DSSAT PDI"
 ```
 
-## 4. The Change of Experiments Location
+## 4. The Change of Experiment Location
 You can test different locations, such as Spain. Please follow the steps: 
 
 First, Download the config file SIAZ9501.MZX to the place jupyter notebook located
